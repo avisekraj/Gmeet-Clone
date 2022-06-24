@@ -1,0 +1,29 @@
+.callpage-container {
+
+    .video-container {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; // use "cover" to avoid distortion
+      position: fixed;
+      z-index: -1;
+    }
+  }
+  @media (max-width:630px){
+    .callpage-container {
+      width: 630px;
+      .video-container {
+        height: 200vh;
+        width: 100%;
+        overflow: hidden;
+      }
+      .footer{
+        position: relative;
+        
+        top: 200vh;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  

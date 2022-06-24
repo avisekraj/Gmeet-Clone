@@ -1,0 +1,48 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 124px;
+    img {
+      width: 100%;
+    }
+    .help-text {
+      font-size: 22px;
+      padding-left: 4px;
+      color: #5f6368;
+    }
+  }
+  .action-btn {
+    display: flex;
+    align-items: center;
+    .icon-block {
+      font-size: 20px;
+      padding: 10px;
+      color: #5f6368;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    .logo {
+      width: 100px;
+      img {
+        width: 100px;
+      }
+      .help-text{
+        font-size: 18px;
+      }
+    }
+    .action-btn{
+      .icon-block{
+        font-size: 15px;
+      }
+    }
+  }
+}
