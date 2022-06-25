@@ -107,9 +107,9 @@ const Messenger = ({ setIsMessenger, sendMsg }) => {
               <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} /> Abhishek</p>
               <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Deepak</p>
               <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Haneet</p>
-              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Param</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Parag</p>
               <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Shivam</p>
-              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Anand</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Aditya</p>
               <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Ritu</p>
               <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Tanu</p>
             </div>

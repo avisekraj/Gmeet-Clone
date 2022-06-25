@@ -37,7 +37,7 @@ const sdata=[{
     id:'6',
     letter:"A",
       color:"wheat",
-      name:"Anand",
+      name:"Aditya",
       
 },
 {
