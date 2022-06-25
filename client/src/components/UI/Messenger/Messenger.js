@@ -6,15 +6,17 @@ import {
   faUserFriends,
   faCommentAlt,
   faPaperPlane,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 import { formatDate } from "./../../../utils/helpers";
 
-const Messenger = ({ setIsMessenger, sendMsg, messageList }) => {
+const Messenger = ({ setIsMessenger, sendMsg }) => {
   const [msg, setMsg] = useState("");
 
   const handleChangeMsg = (e) => {
     setMsg(e.target.value);
   };
+  const [show, setShow] = useState(false);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -41,10 +43,10 @@ const Messenger = ({ setIsMessenger, sendMsg, messageList }) => {
         />
       </div>
 
-      <div className="messenger-header-tabs">
+      <div className="messenger-header-tabs" onClick={() => setShow(!show)}>
         <div className="tab">
           <FontAwesomeIcon className="icon" icon={faUserFriends} />
-          <p>People (1)</p>
+          <p>People (8)</p>
         </div>
         <div className="tab active">
           <FontAwesomeIcon className="icon" icon={faCommentAlt} />
@@ -53,14 +55,38 @@ const Messenger = ({ setIsMessenger, sendMsg, messageList }) => {
       </div>
 
       <div className="chat-section">
-        {messageList.map((item) => (
-          <div key={item.time} className="chat-block">
-            <div className="sender">
-              {item.user} <small>{formatDate(item.time)}</small>
-            </div>
-            <p className="msg">{item.msg}</p>
+        <div className="chat-block">
+          <div className="sender">
+            <small>Abhi:</small>
           </div>
-        ))}
+          <p className="msg">Hi</p>
+          <p className="msg">I'm Abhi</p>
+          <div className="sender1">
+            <small>shek:</small>
+          </div>
+          <p className="msg1" style={{ marginTop: "7px" }}>
+            Hi
+          </p>
+          <p className="msg1">I'm Bachchan</p>
+          <div className="sender">
+            <small>Abhi:</small>
+          </div>
+          <p className="msg">How are you</p>
+          <div className="sender1">
+            <small>Shek:</small>
+          </div>
+          <p className="msg1">Fine</p>
+          <p className="msg1">And You</p>
+          <div className="sender">
+            <small>Abhi:</small>
+          </div>
+          <p className="msg">I'm also Fine</p>
+          <p className="msg">Bye</p>
+          <div className="sender1">
+            <small>Shek:</small>
+          </div>
+          <p className="msg1">Bye</p>
+        </div>
       </div>
 
       <div className="send-msg-section">
@@ -75,6 +101,20 @@ const Messenger = ({ setIsMessenger, sendMsg, messageList }) => {
           icon={faPaperPlane}
           onClick={handleSendMsg}
         />
+        {show && (
+          <div className="people-section">
+            <div className="list">
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} /> Abhishek</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Deepak</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Haneet</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Param</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Shivam</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Anand</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Ritu</p>
+              <p className="naam"><FontAwesomeIcon className="icon" icon={faUser} />Tanu</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

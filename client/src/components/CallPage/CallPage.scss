@@ -1,11 +1,19 @@
 .callpage-container {
+  background-color: #353b48;
 
     .video-container {
-      height: 100%;
-      width: 100%;
-      object-fit: cover; // use "cover" to avoid distortion
-      position: fixed;
-      z-index: -1;
+        background-color: #000000;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        object-fit: cover;
+        border-radius: 5px;
+    
+      // height: 100%;
+      // width: 100%;
+      // object-fit: cover; // use "cover" to avoid distortion
+      // position: fixed;
+      // z-index: -1;
     }
   }
   @media (max-width:630px){

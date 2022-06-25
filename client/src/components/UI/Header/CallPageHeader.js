@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUserFriends,
@@ -6,30 +6,18 @@ import {
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "./CallPageHeader.scss";
-import { formatDate } from "./../../../utils/helpers";
 
-const CallPageHeader = ({
-  isMessenger,
-  setIsMessenger,
-  messageAlert,
-  setMessageAlert,
-}) => {
-  let interval = null;
-  const [currentTime, setCurrentTime] = useState(() => {
-    return formatDate();
-  });
-
-  useEffect(() => {
-    interval = setInterval(() => setCurrentTime(formatDate()), 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+const CallPageHeader = ({setIsMessenger,isMessenger,messageAlert,setMessageAlert}) => {
+  
 
   return (
     <div className="frame-header">
       <div className="header-items icon-block">
-        <FontAwesomeIcon className="icon" icon={faUserFriends} />
+        <FontAwesomeIcon className="icon" icon={faUserFriends}
+        onClick={() => {
+          setIsMessenger(true);
+          setMessageAlert({});
+        }} />
       </div>
       <div
         className="header-items icon-block"
@@ -43,7 +31,7 @@ const CallPageHeader = ({
           <span className="alert-circle-icon"></span>
         )}
       </div>
-      <div className="header-items date-block">{currentTime}</div>
+      <div className="header-items date-block">04:17 AM</div>
       <div className="header-items icon-block">
         <FontAwesomeIcon className="icon profile" icon={faUserCircle} />
       </div>

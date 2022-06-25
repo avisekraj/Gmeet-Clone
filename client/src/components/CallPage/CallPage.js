@@ -14,10 +14,13 @@ import MessageListReducer from "../../reducers/MessageListReducer";
 import Alert from "../UI/Alert/Alert";
 import MeetingInfo from "../UI/MeetingInfo/MeetingInfo";
 import CallPageFooter from "../UI/Header/CallPageFooter";
-import CallPageHeader from "../UI/Header/CallPageHeader";
+import CallPageHeader from "../UI//Header/CallPageHeader";
+import Tiles from "../UI/Tiles/Tiles";
+import sdata from "../UI/Tiles/sdata";
+import "../UI/Tiles/Tiles.scss";
 
 let peer = null;
-const socket = io.connect("http://localhost:4000");
+const socket = io.connect(process.env.REACT_APP_BASE_URL);
 const initialState = [];
 
 const CallPage = () => {
@@ -140,9 +143,7 @@ const CallPage = () => {
         });
 
       })
-      .catch((err) => { 
-        console.log(err)
-      });
+      .catch(() => { });
   };
 
   const sendMsg = (msg) => {
@@ -204,12 +205,14 @@ const CallPage = () => {
   return (
     <div className="callpage-container">
       <video className="video-container" src="" controls></video>
+
       <CallPageHeader
         isMessenger={isMessenger}
         setIsMessenger={setIsMessenger}
         messageAlert={messageAlert}
         setMessageAlert={setMessageAlert}
       />
+
       <CallPageFooter
         isPresenting={isPresenting}
         stopScreenShare={stopScreenShare}
@@ -231,6 +234,15 @@ const CallPage = () => {
       ) : (
         messageAlert.isPopup && <Alert messageAlert={messageAlert} />
       )}
+      {sdata.map((val)=>{
+  return (
+  <Tiles
+  key={val.id}
+    letter={val.letter}
+    name={val.name}
+  />
+  );
+  })}
     </div>
   );
 };
